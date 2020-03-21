@@ -1,7 +1,8 @@
 <?php
+
  class Post {
-    private $cnx;
     private $table = 'posts';
+    private $cnx;
     
     public $id;
     public $title;
@@ -12,9 +13,10 @@
     }
 
     public function index(){
-        $query = "SELECT * FROM ' . $this->table . '";
+        $query = 'SELECT id,title,body FROM '.$this->table.'';
         $stmt = $this->cnx->prepare($query);
-        $stmt->exceute();
+        // var_dump($stmt);
+        $stmt->execute();
 
         return $stmt;
     }

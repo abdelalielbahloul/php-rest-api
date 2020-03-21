@@ -29,7 +29,7 @@ if ($num > 0) {
         );
 
         // push the items into posts array
-        array_push($posts['data'], ...$items);
+        array_push($posts['data'], $items);
     }
     // return the json to the client 
     echo json_encode($posts);
