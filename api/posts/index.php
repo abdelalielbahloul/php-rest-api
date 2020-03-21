@@ -1,12 +1,7 @@
 <?php
-header('Access-Control-Allow-Origin: *');
-header('Content-Type: application/json');
-require_once '../../config/Database.php';
+require_once '../middlewares/headers.php';
+require_once '../middlewares/connect.php';
 require_once '../../models/Post.php';
-
-// connect to Db
-$database = new Database();
-$db = $database->connect();
 
 // Intanciate the Post Class
 $post = new Post($db);
